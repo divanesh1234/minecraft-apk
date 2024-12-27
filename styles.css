@@ -1,84 +1,122 @@
 /* General Styling */
 body {
-    font-family: 'Press Start 2P', cursive; /* Minecraft-style font */
+    font-family: 'Press Start 2P', cursive; /* Minecraft-style pixel font */
     margin: 0;
     padding: 0;
-    background: url('minecraft-background.png') no-repeat center center fixed;
+    background: url('minecraft-background.png') no-repeat center center fixed; /* Minecraft-style grass background */
     background-size: cover;
-    color: #e0e0e0; /* Subtle gray text */
+    color: #e0e0e0;
+    text-align: center;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-/* Container */
+/* Universal Container */
 .minecraft-container {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 40px 30px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    padding: 30px;
+    margin: auto;
+    max-width: 450px;
     border-radius: 15px;
-    box-shadow: 0 0 20px #00ff00, 0 0 40px #007700;
-    width: 90%;
-    max-width: 400px;
+    border: 3px solid rgba(34, 139, 34, 0.8); /* Green glowing border */
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.8);
 }
 
-/* Heading */
+/* Headers (H1, H2) */
 .minecraft-heading {
-    font-size: 2.5em;
     color: #00ff00; /* Minecraft green */
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #007700;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #008000; /* Green glowing effect */
+    font-size: 2.5em;
     margin-bottom: 15px;
 }
 
-/* Subtext */
 .minecraft-subtext {
     font-size: 1em;
-    margin-bottom: 25px;
-    color: #e0e0e0;
+    line-height: 1.5;
+    color: #d0d0d0;
+    margin: 15px 0;
 }
 
-/* Input */
+/* Input Fields */
 .minecraft-input {
     width: 100%;
-    padding: 10px;
-    font-size: 1.2em;
-    border: none;
+    padding: 15px;
+    font-size: 1em;
+    border: 2px solid #00ff00; /* Green border */
     border-radius: 5px;
-    background: #333333;
-    color: #00ff00;
+    background: #1a1a1a; /* Dark input background */
+    color: #00ff00; /* Minecraft green text */
     outline: none;
-    box-shadow: 0 0 10px #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    box-shadow: 0 0 10px rgba(50, 205, 50, 0.6);
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
 }
 
 .minecraft-input::placeholder {
-    color: #777;
+    color: #777; /* Subtle placeholder color */
 }
 
-/* Button */
+/* Buttons */
 .minecraft-button {
     margin-top: 15px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1.2em;
     font-weight: bold;
-    background: linear-gradient(90deg, #228B22, #2E8B57);
+    text-transform: uppercase;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #228b22, #2e8b57, #006400); /* Green button gradient */
     color: #fff;
     cursor: pointer;
-    box-shadow: 0 0 10px #00ff00, 0 0 20px #007700;
+    box-shadow: 0 0 15px #00ff00, 0 0 30px #006400;
     transition: transform 0.3s, box-shadow 0.3s;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .minecraft-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00ff00, 0 0 30px #007700;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 0 25px #00ff00, 0 0 40px #007700;
 }
 
-/* Message */
+/* Error and Success Messages */
 .minecraft-message {
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 1em;
-    text-shadow: 0 0 5px #00ff00;
+    color: #ff4500; /* Red for error messages */
+    text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347;
+}
+
+.minecraft-message.success {
+    color: #00ff00; /* Green for success messages */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #007700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .minecraft-heading {
+        font-size: 1.8em;
+    }
+
+    .minecraft-subtext {
+        font-size: 0.9em;
+    }
+
+    .minecraft-input {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .minecraft-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .minecraft-container {
+        width: 90%;
+        padding: 20px;
+    }
 }
