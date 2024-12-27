@@ -8,118 +8,113 @@
     <style>
         /* General Styling */
         body {
-            font-family: 'Press Start 2P', cursive; /* Pixelated font for Minecraft feel */
+            font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #0b6623, #228b22, #4ca64c); /* Minecraft grass-like gradient */
-            color: #fff;
+            background: url('minecraft-background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            text-align: center;
             overflow: hidden;
         }
 
         /* Container Styling */
         .minecraft-container {
-            background: rgba(34, 139, 34, 0.9); /* Transparent green background */
+            background: rgba(0, 0, 0, 0.85);
             padding: 40px 30px;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(34, 139, 34, 0.6);
-            width: 90%;
+            box-shadow: 0 0 25px #00ff00, 0 0 50px #007700;
             max-width: 400px;
-            border: 3px solid #000; /* Bold border for a retro feel */
+            text-align: center;
         }
 
         /* Heading Styling */
         .minecraft-heading {
-            font-size: 2em;
-            color: #ffd700; /* Gold color for the heading */
-            text-shadow: 0 0 10px #ffd700, 0 0 20px #ff4500; /* Glowing gold and orange effect */
+            font-size: 2.5em;
+            color: #00ff00;
+            text-shadow: 0 0 15px #00ff00, 0 0 30px #007700;
             margin-bottom: 20px;
         }
 
         /* Subtext Styling */
         .minecraft-subtext {
-            font-size: 1em;
-            margin-bottom: 20px;
-            color: #ffffff;
-            text-shadow: 0 0 5px #32cd32, 0 0 10px #32cd32; /* Subtle glowing green effect */
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+            line-height: 1.5;
         }
 
         /* Input Styling */
         .minecraft-input {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             margin: 15px 0;
-            font-size: 1em;
-            border: 2px solid #000;
-            border-radius: 10px;
-            background: #222; /* Dark background for the input field */
-            color: #32cd32; /* Green input text */
-            text-shadow: 0 0 5px #32cd32;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            background: #333333;
+            color: #00ff00;
             outline: none;
-            box-shadow: 0 0 10px rgba(50, 205, 50, 0.6);
-            font-family: 'Press Start 2P', cursive; /* Keep the pixelated font */
+            box-shadow: 0 0 15px #00ff00;
         }
 
         .minecraft-input::placeholder {
-            color: #aaa;
+            color: #777;
         }
 
         /* Button Styling */
         .minecraft-button {
-            display: inline-block;
-            padding: 12px 25px;
-            font-size: 1em;
+            margin-top: 15px;
+            padding: 12px 30px;
+            font-size: 1.2em;
             font-weight: bold;
-            background: linear-gradient(90deg, #32cd32, #228b22, #006400);
-            border: 2px solid #000;
-            border-radius: 10px;
+            background: linear-gradient(90deg, #228B22, #2E8B57);
+            border: none;
+            border-radius: 8px;
             color: #fff;
             cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 0 15px #32cd32, 0 0 25px #006400;
-            font-family: 'Press Start 2P', cursive; /* Keep the pixelated font */
+            box-shadow: 0 0 15px #00ff00, 0 0 30px #007700;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .minecraft-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 25px #32cd32, 0 0 40px #006400;
+            box-shadow: 0 0 30px #00ff00, 0 0 50px #007700;
         }
 
         /* Message Styling */
         .minecraft-message {
-            margin-top: 10px;
-            font-size: 1em;
-            color: #ff4500; /* Red-orange for error messages */
-            text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347;
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #ff4500;
+            text-shadow: 0 0 10px #ff4500;
         }
     </style>
 </head>
 <body>
     <div class="minecraft-container">
         <h1 class="minecraft-heading">Minecraft Unlock Portal</h1>
-        <p class="minecraft-subtext">Enter the secret code to access your treasure:</p>
+        <p class="minecraft-subtext">Enter the secret unlock code below to access your treasure:</p>
         <input type="text" id="code" placeholder="Enter Unlock Code" class="minecraft-input">
         <button onclick="validateCode()" class="minecraft-button">Unlock</button>
         <p id="result" class="minecraft-message"></p>
     </div>
     <script>
         function validateCode() {
-            const code = document.getElementById("code").value;
-            const correctCode = "123"; // Replace with the actual code
+            const code = document.getElementById("code").value.trim();
+            const correctCode = "123";
 
             if (code === correctCode) {
                 document.getElementById("result").textContent = "Code accepted! Redirecting...";
                 document.getElementById("result").style.color = "#32cd32";
                 setTimeout(() => {
-                    window.location.href = "download.html"; // Redirect to the download page
+                    window.location.href = "download.html";
                 }, 2000);
             } else {
-                document.getElementById("result").textContent = "Invalid code. Try again!";
+                document.getElementById("result").textContent = "Invalid code. Please try again!";
                 document.getElementById("result").style.color = "#ff4500";
             }
         }
