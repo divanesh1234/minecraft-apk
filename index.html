@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Page</title>
+    <title>Minecraft Unlock Portal</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateCode() {
+            const code = document.getElementById("code").value;
+            const correctCode = "123"; // Replace with the actual code
+
+            if (code === correctCode) {
+                document.getElementById("result").textContent = "Code accepted! Welcome to the Minecraft world!";
+                document.getElementById("result").style.color = "#4caf50";
+                setTimeout(() => {
+                    window.location.href = "treasure.html"; // Redirect to the treasure page
+                }, 2000);
+            } else {
+                document.getElementById("result").textContent = "Invalid code. Try again!";
+                document.getElementById("result").style.color = "#ff4d4f";
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Enter Password</h1>
-        <form id="login-form">
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="minecraft-container">
+        <h1 class="minecraft-heading">Minecraft Unlock Portal</h1>
+        <p class="minecraft-subtext">Enter the secret code to access your treasure:</p>
+        <input type="text" id="code" placeholder="Enter Unlock Code" class="minecraft-input">
+        <button onclick="validateCode()" class="minecraft-button">Unlock</button>
+        <p id="result" class="minecraft-message"></p>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
