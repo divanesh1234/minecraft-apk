@@ -3,14 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect to Another Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Download APK</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 0;
+            background: url('minecraft-background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .download-container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px #00ff00, 0 0 50px #007700;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffd700;
+            text-shadow: 0 0 15px #ffd700, 0 0 30px #ff4500;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        a button {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: linear-gradient(90deg, #32cd32, #228B22, #006400);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 15px #00ff00, 0 0 30px #007700;
+            text-transform: uppercase;
+            font-family: 'Press Start 2P', cursive;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        a button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px #00ff00, 0 0 50px #007700;
+        }
+    </style>
 </head>
 <body>
     <div class="download-container">
         <h1>Download APK</h1>
-        <p>Click the button below to be redirected to the download page.</p>
-        <!-- Just place your link in the href attribute -->
+        <p>Click the button below to be redirected to the download page:</p>
         <a href="https://drive.google.com/file/d/1vPwf38N7qdx8rAeAEC6p1koEWF6LOjaz/view?usp=sharing">
             <button>Go to Download Page</button>
         </a>
